@@ -44,3 +44,11 @@ function playDrum(letter) {
 };
 
 construct();
+
+// ON PRESS
+
+window.addEventListener("keydown", handleKeyEvents);
+
+function handleKeyEvents(){
+    playDrum(event.key.toUpperCase());
+}
