@@ -23,13 +23,23 @@ function construct() {
         keyDiv.appendChild(h2);
 
         document.getElementById("musicBox").appendChild(keyDiv);
+
+        keyDiv.addEventListener("click", function(event) {
+
+            let letter = event.currentTarget.querySelector("h2").textContent;
+            playDrum(letter);
+
+
+        });
+
+
     };
-}
+};
 
 function playDrum(letter) {
   const audio = new Audio()
   audio.src = data[letter].sound;
-  audio();
+  audio.play();
 
 };
 
