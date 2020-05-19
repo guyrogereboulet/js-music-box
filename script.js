@@ -1,23 +1,30 @@
 const data = {
-    'E': {
-        sound: 'media/sounds/drum1.mp3'},
-    'R': {
-        sound: 'media/sounds/drum2.mp3'},
-    'T': {
-        sound: 'media/sounds/beat1.mp3'},
-    'D': {
-        sound: 'media/sounds/beat2.mp3'},
-    'F': {
-        sound: 'media/sounds/beat3.mp3'},
-    'G': {
-        sound: 'media/sounds/lindrum.mp3'},
-    'C': {
-        sound: 'media/sounds/percu1.mp3'},
-    'V': {
-        sound: 'media/sounds/electro1.mp3'},
-    'B': {
-        sound: 'media/sounds/electro2.mp3'},
+    'E': {sound: 'media/sounds/drum1.mp3'},
+    'R': {sound: 'media/sounds/drum2.mp3'},
+    'T': {sound: 'media/sounds/beat1.mp3'},
+    'D': {sound: 'media/sounds/beat2.mp3'},
+    'F': {sound: 'media/sounds/beat3.mp3'},
+    'G': {sound: 'media/sounds/lindrum.mp3'},
+    'C': {sound: 'media/sounds/percu1.mp3'},
+    'V': {sound: 'media/sounds/electro1.mp3'},
+    'B': {sound: 'media/sounds/electro2.mp3'},
 };
+
+
+function construct() {
+    for (const letter in data) {
+        console.log(letter);
+        const keyDiv = document.createElement("div");
+        keyDiv.classList.add("drum");
+
+        let h2 = document.createElement("h2");
+        h2.textContent = letter;
+
+        keyDiv.appendChild(h2);
+
+        document.getElementById("musicBox").appendChild(keyDiv);
+    };
+}
 
 function playDrum(letter) {
   const audio = new Audio()
@@ -25,3 +32,5 @@ function playDrum(letter) {
   audio();
 
 };
+
+construct();
